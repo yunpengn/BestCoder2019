@@ -11,3 +11,4 @@ def replace_data(old_file_name, new_file_name):
 replace_data('data/bank_accounts.csv', 'data/bank_accounts_new.csv')
 replace_data('data/credit_cards.csv', 'data/credit_cards_new.csv')
 replace_data('data/devices.csv', 'data/devices_new.csv')
+replace_data('data/orders.csv', 'data/orders_new.csv')
