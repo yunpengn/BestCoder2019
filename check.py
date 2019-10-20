@@ -79,4 +79,4 @@ with open(OUTPUT_FILE_PATH, 'w') as csv_file:
     csv_writer.writerow(['index', 'groups_found'])
 
     # writing the data rows
-    csv_writer.writerows(results)
+    csv_writer.writerows(result_list)
