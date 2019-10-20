@@ -2,6 +2,8 @@ import csv
 import re
 
 DATA_FILE_PATH='data/train.csv'
+INPUT_FILE_PATH='data/predict.csv'
+OUTPUT_FILE_PATH='data/output.csv'
 
 # Stores mapping from keyword to group_id.
 mapping = {}
@@ -53,3 +55,28 @@ def check(name):
 				result.add(group_id)
 
 	return list(result)
+
+# Reads all rows from input.
+result_list = []
+with open(INPUT_FILE_PATH) as f:
+	csv_file = csv.reader(f, delimiter=',', quotechar='"')
+	next(csv_file, None)
+
+	# Processes row by row.
+	for row in csv_file:
+		index = int(row[0])
+		name = row[1]
+
+		result_list.append([index, check(name)])
+
+# Writes back to output file.
+# writing to csv file
+with open(OUTPUT_FILE_PATH, 'w') as csv_file:
+    # creating a csv writer object
+    csv_writer = csv.writer(csv_file)
+
+    # writing the fields
+    csv_writer.writerow(['index', 'groups_found'])
+
+    # writing the data rows
+    csv_writer.writerows(results)
