@@ -67,7 +67,9 @@ with open(INPUT_FILE_PATH) as f:
 		index = int(row[0])
 		name = row[1]
 
-		result_list.append([index, check(name)])
+		result = check(name)
+		result_str = str(result)
+		result_list.append([index, result_str])
 
 # Writes back to output file.
 # writing to csv file
