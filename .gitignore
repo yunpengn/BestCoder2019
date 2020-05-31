@@ -107,4 +107,4 @@ venv.bak/
 .DS_Store
 
 # Data input files
-data/*.csv
+*.csv
