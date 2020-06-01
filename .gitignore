@@ -108,3 +108,6 @@ venv.bak/
 
 # Data input files
 *.csv
+
+# IntelliJ IDEA files
+.idea
